@@ -13,7 +13,7 @@ import time
 import random
 
 # 基本参数
-xmlDir = r"VOC_MASK\Annotations\s\new"
+xmlDir = r"VOC_MASK\Annotations\new"
 imgDir = r"VOC_MASK\JPEGImages\new"
 xmlList = [os.path.join(xmlDir, f) for f in os.listdir(xmlDir)]
 labelDic = {'m': 0, 's': 1}
