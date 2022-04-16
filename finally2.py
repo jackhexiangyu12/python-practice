@@ -159,13 +159,15 @@ def refImg(imgPath):
             bbox = box["bbox"]
             print(box)
             if box["class"] == 0:
-                h=int(bbox[3]-bbox[2])
-                bias=int(h*0.2)
+                # h=int(bbox[3]-bbox[2])
+                # bias=int(h*0.2)
+                bias=0
                 cv2.rectangle(img, (int(bbox[0]), int(bbox[2]+bias)), (int(bbox[1]), int(bbox[3]+bias)),(255,0,0), 5)
                 # draw_rectangle(box["bbox"], edgecolor='r')
             else:
-                h=int(bbox[3]-bbox[2])
-                bias=int(h*0.2)
+                # h=int(bbox[3]-bbox[2])
+                # bias=int(h*0.2)
+                bias=0
                 cv2.rectangle(img, (int(bbox[0]), int(bbox[2]+bias)), (int(bbox[1]), int(bbox[3]+bias)),(0,0,255), 5)
                 # draw_rectangle(box["bbox"])
 
