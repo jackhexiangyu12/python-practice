@@ -13,7 +13,7 @@ import time
 import random
 
 # 基本参数
-xmlDir = r"VOC_MASK\Annotations\new"
+xmlDir = r"VOC_MASK\Annotations\s\new1"
 imgDir = r"VOC_MASK\JPEGImages\new"
 xmlList = [os.path.join(xmlDir, f) for f in os.listdir(xmlDir)]
 labelDic = {'m': 0, 's': 1}
@@ -240,6 +240,10 @@ dataNum = len(xmlList)
 print(dataNum)
 # TODO 看看总长度是多少???
 # 总次数 = 5 * dataNum/BATCH_SIZE * 1 = ?
+
+acc=[]
+loss=[]
+epochs = range(0,15)
 for i in range(15):  # 训练5次?    0226:改为2次
     print("This is {} times in big FOR".format(i))
     testModel()  # 之前定义的函数
@@ -264,9 +268,19 @@ for i in range(15):  # 训练5次?    0226:改为2次
         # print(la)
         if begin % 128 == 0:  # change here?
             print(i, begin, la, time.time() - tic)  # 打印训练的各种信息，时间等等
+            loss.append(la)
             # 写一个详细的 tips !!!
         begin += BATCH_SIZE  # 280s 一次
         end += BATCH_SIZE
+
+
+import matplotlib.pyplot as plt
+
+plt.plot(epochs,acc,color='r',label='acc')        # r表示红色
+# plt.plot(epochs,loss,color=(0,0,0),label='loss')  #也可以用RGB值表示颜色
+
+plt.show()
+print('finishing training')
 
 
 fluid.io.save_persistables(exe, './model2', fluid.default_main_program())
