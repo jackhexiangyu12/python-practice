@@ -1,0 +1,50 @@
+<annotation>
+	<folder>VID20220413111420 (2022-4-13 20-16-39)</folder>
+	<filename>VID20220413111420 13.jpg</filename>
+	<path>D:\图片库\图片库30\VID20220413111420 (2022-4-13 20-16-39)\VID20220413111420 13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>1920</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>m</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>553</xmin>
+			<ymin>619</ymin>
+			<xmax>708</xmax>
+			<ymax>766</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>295</xmin>
+			<ymin>839</ymin>
+			<xmax>440</xmax>
+			<ymax>990</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>752</xmin>
+			<ymin>790</ymin>
+			<xmax>907</xmax>
+			<ymax>1018</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -5,15 +5,134 @@ import paddle.fluid as fluid
 import paddle.fluid as fluid
 from paddle.fluid.param_attr import ParamAttr
 from paddle.fluid.regularizer import L2Decay
-
+import xml.etree.ElementTree as ET
 from paddle.fluid.dygraph.nn import Conv2D, BatchNorm
 from paddle.fluid.dygraph.base import to_variable
 import functools
 import paddle
+import numpy as np
+
+INSECT_NAMES = ['m','s']
+### 数据读取
+import cv2
 
 
-INSECT_NAMES = ['Boerner', 'Leconte', 'Linnaeus',
-                'acuminatus', 'armandi', 'coleoptera', 'linnaeus']
+def get_bbox(gt_bbox, gt_class):
+    # 对于一般的检测任务来说，一张图片上往往会有多个目标物体
+    # 设置参数MAX_NUM = 50， 即一张图片最多取50个真实框；如果真实
+    # 框的数目少于50个，则将不足部分的gt_bbox, gt_class和gt_score的各项数值全设置为0
+    MAX_NUM = 50
+    gt_bbox2 = np.zeros((MAX_NUM, 4))
+    gt_class2 = np.zeros((MAX_NUM,))
+    for i in range(len(gt_bbox)):
+        gt_bbox2[i, :] = gt_bbox[i, :]
+        gt_class2[i] = gt_class[i]
+        if i >= MAX_NUM:
+            break
+    return gt_bbox2, gt_class2
+
+
+def get_img_data_from_file(record):
+    """
+    record is a dict as following,
+      record = {
+            'im_file': img_file,
+            'im_id': im_id,
+            'h': im_h,
+            'w': im_w,
+            'is_crowd': is_crowd,
+            'gt_class': gt_class,
+            'gt_bbox': gt_bbox,
+            'gt_poly': [],
+            'difficult': difficult
+            }
+    """
+    im_file = record['im_file']
+    h = record['h']
+    w = record['w']
+    is_crowd = record['is_crowd']
+    gt_class = record['gt_class']
+    gt_bbox = record['gt_bbox']
+    difficult = record['difficult']
+
+    img = cv2.imread(im_file)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    # check if h and w in record equals that read from img
+    assert img.shape[0] == int(h), \
+        "image height of {} inconsistent in record({}) and img file({})".format(
+            im_file, h, img.shape[0])
+
+    assert img.shape[1] == int(w), \
+        "image width of {} inconsistent in record({}) and img file({})".format(
+            im_file, w, img.shape[1])
+
+    gt_boxes, gt_labels = get_bbox(gt_bbox, gt_class)
+
+    # gt_bbox 用相对值
+    gt_boxes[:, 0] = gt_boxes[:, 0] / float(w)
+    gt_boxes[:, 1] = gt_boxes[:, 1] / float(h)
+    gt_boxes[:, 2] = gt_boxes[:, 2] / float(w)
+    gt_boxes[:, 3] = gt_boxes[:, 3] / float(h)
+
+    return img, gt_boxes, gt_labels, (h, w)
+# 获取一个批次内样本随机缩放的尺寸
+
+def get_img_data(record, size=640):
+    img, gt_boxes, gt_labels, scales = get_img_data_from_file(record)
+    img, gt_boxes, gt_labels = image_augment(img, gt_boxes, gt_labels, size)
+    mean = [0.485, 0.456, 0.406]
+    std = [0.229, 0.224, 0.225]
+    mean = np.array(mean).reshape((1, 1, -1))
+    std = np.array(std).reshape((1, 1, -1))
+    img = (img / 255.0 - mean) / std
+    img = img.astype('float32').transpose((2, 0, 1))
+    return img, gt_boxes, gt_labels, scales
+
+
+def get_img_size(mode):
+    if (mode == 'train') or (mode == 'valid'):
+        inds = np.array([0,1,2,3,4,5,6,7,8,9])
+        ii = np.random.choice(inds)
+        img_size = 320 + ii * 32
+    else:
+        img_size = 608
+    return img_size
+
+# 将 list形式的batch数据 转化成多个array构成的tuple
+def make_array(batch_data):
+    img_array = np.array([item[0] for item in batch_data], dtype = 'float32')
+    gt_box_array = np.array([item[1] for item in batch_data], dtype = 'float32')
+    gt_labels_array = np.array([item[2] for item in batch_data], dtype = 'int32')
+    img_scale = np.array([item[3] for item in batch_data], dtype='int32')
+    return img_array, gt_box_array, gt_labels_array, img_scale
+
+# 批量读取数据，同一批次内图像的尺寸大小必须是一样的，
+# 不同批次之间的大小是随机的，
+# 由上面定义的get_img_size函数产生
+def data_loader(datadir, batch_size= 10, mode='train'):
+    cname2cid = get_insect_names()
+    records = get_annotations(cname2cid, datadir)
+
+    def reader():
+        if mode == 'train':
+            np.random.shuffle(records)
+        batch_data = []
+        img_size = get_img_size(mode)
+        for record in records:
+            #print(record)
+            img, gt_bbox, gt_labels, im_shape = get_img_data(record,
+                                                             size=img_size)
+            batch_data.append((img, gt_bbox, gt_labels, im_shape))
+            if len(batch_data) == batch_size:
+                yield make_array(batch_data)
+                batch_data = []
+                img_size = get_img_size(mode)
+        if len(batch_data) > 0:
+            yield make_array(batch_data)
+
+    return reader
+
 
 def get_insect_names():
     """
@@ -36,12 +155,12 @@ def get_insect_names():
 
 
 def get_annotations(cname2cid, datadir):
-    filenames = os.listdir(os.path.join(datadir, 'annotations', 'xmls'))
+    filenames = os.listdir(os.path.join(datadir, 'annotations'))
     records = []
     ct = 0
     for fname in filenames:
         fid = fname.split('.')[0]
-        fpath = os.path.join(datadir, 'annotations', 'xmls', fname)
+        fpath = os.path.join(datadir, 'annotations', fname)
         img_file = os.path.join(datadir, 'images', fid + '.jpeg')
         tree = ET.parse(fpath)
 
@@ -54,9 +173,9 @@ def get_annotations(cname2cid, datadir):
         im_w = float(tree.find('size').find('width').text)
         im_h = float(tree.find('size').find('height').text)
         gt_bbox = np.zeros((len(objs), 4), dtype=np.float32)
-        gt_class = np.zeros((len(objs), ), dtype=np.int32)
-        is_crowd = np.zeros((len(objs), ), dtype=np.int32)
-        difficult = np.zeros((len(objs), ), dtype=np.int32)
+        gt_class = np.zeros((len(objs),), dtype=np.int32)
+        is_crowd = np.zeros((len(objs),), dtype=np.int32)
+        difficult = np.zeros((len(objs),), dtype=np.int32)
         for i, obj in enumerate(objs):
             cname = obj.find('name').text
             gt_class[i] = cname2cid[cname]
@@ -70,7 +189,7 @@ def get_annotations(cname2cid, datadir):
             x2 = min(im_w - 1, x2)
             y2 = min(im_h - 1, y2)
             # 这里使用xywh格式来表示目标物体真实框
-            gt_bbox[i] = [(x1+x2)/2.0 , (y1+y2)/2.0, x2-x1+1., y2-y1+1.]
+            gt_bbox[i] = [(x1 + x2) / 2.0, (y1 + y2) / 2.0, x2 - x1 + 1., y2 - y1 + 1.]
             is_crowd[i] = 0
             difficult[i] = _difficult
 
@@ -84,15 +203,18 @@ def get_annotations(cname2cid, datadir):
             'gt_bbox': gt_bbox,
             'gt_poly': [],
             'difficult': difficult
-            }
+        }
         if len(objs) != 0:
             records.append(voc_rec)
         ct += 1
     return records
+
+
 # 使用paddle.reader.xmap_readers实现多线程读取数据
-def multithread_loader(datadir, batch_size= 10, mode='train'):
+def multithread_loader(datadir, batch_size=10, mode='train'):
     cname2cid = get_insect_names()
     records = get_annotations(cname2cid, datadir)
+
     def reader():
         if mode == 'train':
             np.random.shuffle(records)
@@ -119,11 +241,13 @@ def multithread_loader(datadir, batch_size= 10, mode='train'):
     mapper = functools.partial(get_data, )
 
     return paddle.reader.xmap_readers(mapper, reader, 8, 10)
+
+
 # 从骨干网络输出特征图C0得到跟预测相关的特征图P0
 class YoloDetectionBlock(fluid.dygraph.Layer):
     # define YOLO-V3 detection head
     # 使用多层卷积和BN提取特征
-    def __init__(self,ch_in,ch_out,is_test=True):
+    def __init__(self, ch_in, ch_out, is_test=True):
         super(YoloDetectionBlock, self).__init__()
 
         assert ch_out % 2 == 0, \
@@ -136,47 +260,48 @@ class YoloDetectionBlock(fluid.dygraph.Layer):
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.conv1 = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
         self.conv2 = ConvBNLayer(
-            ch_in=ch_out*2,
+            ch_in=ch_out * 2,
             ch_out=ch_out,
             filter_size=1,
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.conv3 = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
         self.route = ConvBNLayer(
-            ch_in=ch_out*2,
+            ch_in=ch_out * 2,
             ch_out=ch_out,
             filter_size=1,
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.tip = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
+
     def forward(self, inputs):
         out = self.conv0(inputs)
         out = self.conv1(out)
@@ -192,7 +317,7 @@ class YoloDetectionBlock(fluid.dygraph.Layer):
 class YoloDetectionBlock(fluid.dygraph.Layer):
     # define YOLO-V3 detection head
     # 使用多层卷积和BN提取特征
-    def __init__(self,ch_in,ch_out,is_test=True):
+    def __init__(self, ch_in, ch_out, is_test=True):
         super(YoloDetectionBlock, self).__init__()
 
         assert ch_out % 2 == 0, \
@@ -205,47 +330,48 @@ class YoloDetectionBlock(fluid.dygraph.Layer):
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.conv1 = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
         self.conv2 = ConvBNLayer(
-            ch_in=ch_out*2,
+            ch_in=ch_out * 2,
             ch_out=ch_out,
             filter_size=1,
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.conv3 = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
         self.route = ConvBNLayer(
-            ch_in=ch_out*2,
+            ch_in=ch_out * 2,
             ch_out=ch_out,
             filter_size=1,
             stride=1,
             padding=0,
             is_test=is_test
-            )
+        )
         self.tip = ConvBNLayer(
             ch_in=ch_out,
-            ch_out=ch_out*2,
+            ch_out=ch_out * 2,
             filter_size=3,
             stride=1,
             padding=1,
             is_test=is_test
-            )
+        )
+
     def forward(self, inputs):
         out = self.conv0(inputs)
         out = self.conv1(out)
@@ -451,6 +577,7 @@ class DarkNet53_conv_body(fluid.dygraph.Layer):
 
 DarkNet_cfg = {53: ([1, 2, 8, 8, 4])}
 
+
 # 定义上采样模块
 class DarkNet53_conv_body(fluid.dygraph.Layer):
     def __init__(self,
@@ -511,7 +638,7 @@ class DarkNet53_conv_body(fluid.dygraph.Layer):
 
 class Upsample(fluid.dygraph.Layer):
     def __init__(self, scale=2):
-        super(Upsample,self).__init__()
+        super(Upsample, self).__init__()
         self.scale = scale
 
     def forward(self, inputs):
@@ -528,16 +655,17 @@ class Upsample(fluid.dygraph.Layer):
             input=inputs, scale=self.scale, actual_shape=out_shape)
         return out
 
+
 # 定义YOLO-V3模型
 class YOLOv3(fluid.dygraph.Layer):
     def __init__(self, num_classes=7, is_train=True):
-        super(YOLOv3,self).__init__()
+        super(YOLOv3, self).__init__()
 
         self.is_train = is_train
         self.num_classes = num_classes
         # 提取图像特征的骨干代码
         self.block = DarkNet53_conv_body(
-                                         is_test = not self.is_train)
+            is_test=not self.is_train)
         self.block_outputs = []
         self.yolo_blocks = []
         self.route_blocks_2 = []
@@ -547,9 +675,9 @@ class YOLOv3(fluid.dygraph.Layer):
             yolo_block = self.add_sublayer(
                 "yolo_detecton_block_%d" % (i),
                 YoloDetectionBlock(
-                                   ch_in=512//(2**i)*2 if i==0 else 512//(2**i)*2 + 512//(2**i),
-                                   ch_out = 512//(2**i),
-                                   is_test = not self.is_train))
+                    ch_in=512 // (2 ** i) * 2 if i == 0 else 512 // (2 ** i) * 2 + 512 // (2 ** i),
+                    ch_out=512 // (2 ** i),
+                    is_test=not self.is_train))
             self.yolo_blocks.append(yolo_block)
 
             num_filters = 3 * (self.num_classes + 5)
@@ -557,7 +685,7 @@ class YOLOv3(fluid.dygraph.Layer):
             # 添加从ti生成pi的模块，这是一个Conv2D操作，输出通道数为3 * (num_classes + 5)
             block_out = self.add_sublayer(
                 "block_out_%d" % (i),
-                Conv2D(num_channels=512//(2**i)*2,
+                Conv2D(num_channels=512 // (2 ** i) * 2,
                        num_filters=num_filters,
                        filter_size=1,
                        stride=1,
@@ -571,9 +699,9 @@ class YOLOv3(fluid.dygraph.Layer):
             self.block_outputs.append(block_out)
             if i < 2:
                 # 对ri进行卷积
-                route = self.add_sublayer("route2_%d"%i,
-                                          ConvBNLayer(ch_in=512//(2**i),
-                                                      ch_out=256//(2**i),
+                route = self.add_sublayer("route2_%d" % i,
+                                          ConvBNLayer(ch_in=512 // (2 ** i),
+                                                      ch_out=256 // (2 ** i),
                                                       filter_size=1,
                                                       stride=1,
                                                       padding=0,
@@ -605,8 +733,8 @@ class YOLOv3(fluid.dygraph.Layer):
         return outputs
 
     def get_loss(self, outputs, gtbox, gtlabel, gtscore=None,
-                 anchors = [10, 13, 16, 30, 33, 23, 30, 61, 62, 45, 59, 119, 116, 90, 156, 198, 373, 326],
-                 anchor_masks = [[6, 7, 8], [3, 4, 5], [0, 1, 2]],
+                 anchors=[10, 13, 16, 30, 33, 23, 30, 61, 62, 45, 59, 119, 116, 90, 156, 198, 373, 326],
+                 anchor_masks=[[6, 7, 8], [3, 4, 5], [0, 1, 2]],
                  ignore_thresh=0.7,
                  use_label_smooth=False):
         """
@@ -614,22 +742,23 @@ class YOLOv3(fluid.dygraph.Layer):
         """
         self.losses = []
         downsample = 32
-        for i, out in enumerate(outputs): # 对三个层级分别求损失函数
+        for i, out in enumerate(outputs):  # 对三个层级分别求损失函数
             anchor_mask_i = anchor_masks[i]
             loss = fluid.layers.yolov3_loss(
-                    x=out,  # out是P0, P1, P2中的一个
-                    gt_box=gtbox,  # 真实框坐标
-                    gt_label=gtlabel,  # 真实框类别
-                    gt_score=gtscore,  # 真实框得分，使用mixup训练技巧时需要，不使用该技巧时直接设置为1，形状与gtlabel相同
-                    anchors=anchors,   # 锚框尺寸，包含[w0, h0, w1, h1, ..., w8, h8]共9个锚框的尺寸
-                    anchor_mask=anchor_mask_i, # 筛选锚框的mask，例如anchor_mask_i=[3, 4, 5]，将anchors中第3、4、5个锚框挑选出来给该层级使用
-                    class_num=self.num_classes, # 分类类别数
-                    ignore_thresh=ignore_thresh, # 当预测框与真实框IoU > ignore_thresh，标注objectness = -1
-                    downsample_ratio=downsample, # 特征图相对于原图缩小的倍数，例如P0是32， P1是16，P2是8
-                    use_label_smooth=False)      # 使用label_smooth训练技巧时会用到，这里没用此技巧，直接设置为False
-            self.losses.append(fluid.layers.reduce_mean(loss))  #reduce_mean对每张图片求和
-            downsample = downsample // 2 # 下一级特征图的缩放倍数会减半
-        return sum(self.losses) # 对每个层级求和
+                x=out,  # out是P0, P1, P2中的一个
+                gt_box=gtbox,  # 真实框坐标
+                gt_label=gtlabel,  # 真实框类别
+                gt_score=gtscore,  # 真实框得分，使用mixup训练技巧时需要，不使用该技巧时直接设置为1，形状与gtlabel相同
+                anchors=anchors,  # 锚框尺寸，包含[w0, h0, w1, h1, ..., w8, h8]共9个锚框的尺寸
+                anchor_mask=anchor_mask_i,  # 筛选锚框的mask，例如anchor_mask_i=[3, 4, 5]，将anchors中第3、4、5个锚框挑选出来给该层级使用
+                class_num=self.num_classes,  # 分类类别数
+                ignore_thresh=ignore_thresh,  # 当预测框与真实框IoU > ignore_thresh，标注objectness = -1
+                downsample_ratio=downsample,  # 特征图相对于原图缩小的倍数，例如P0是32， P1是16，P2是8
+                use_label_smooth=False)  # 使用label_smooth训练技巧时会用到，这里没用此技巧，直接设置为False
+            self.losses.append(fluid.layers.reduce_mean(loss))  # reduce_mean对每张图片求和
+            downsample = downsample // 2  # 下一级特征图的缩放倍数会减半
+        return sum(self.losses)  # 对每个层级求和
+
 
 ANCHORS = [10, 13, 16, 30, 33, 23, 30, 61, 62, 45, 59, 119, 116, 90, 156, 198, 373, 326]
 
@@ -648,9 +777,9 @@ def get_lr(base_lr=0.0001, lr_decay=0.1):
 
 if __name__ == '__main__':
 
-    TRAINDIR = '/home/aistudio/work/insects/train'
-    TESTDIR = '/home/aistudio/work/insects/test'
-    VALIDDIR = '/home/aistudio/work/insects/val'
+    TRAINDIR = 'VOC_MASK/train'
+    TESTDIR = 'VOC_MASK/test'
+    VALIDDIR = 'VOC_MASK/val'
 
     with fluid.dygraph.guard():
         model = YOLOv3(num_classes=NUM_CLASSES, is_train=True)  # 创建模型
