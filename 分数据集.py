@@ -10,9 +10,9 @@ xmlList = [os.path.join(xmlDir, f) for f in os.listdir(xmlDir)]
 testSize=0.2*len(xmlList)
 valSize=0.1*len(xmlList)
 random.shuffle(xmlList)
-xmlListTest=xmlList[int(testSize):]
+xmlListTrain=xmlList[int(testSize)+int(valSize):]
 xmlListVal=xmlList[:int(valSize)]
-xmlListTrain=xmlList[int(valSize):int(testSize)]
+xmlListTest=xmlList[int(valSize):int(testSize)+int(valSize)]
 
 for file in xmlListTest:
     shutil.copy(file, r"VOC_MASK\test\Annotations")

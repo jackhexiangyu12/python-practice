@@ -440,7 +440,7 @@ def get_annotations(cname2cid, datadir):
 
 
 # 使用paddle.reader.xmap_readers实现多线程读取数据
-def multithread_loader(datadir, batch_size=4, mode='train'):
+def multithread_loader(datadir, batch_size=1, mode='train'):
     cname2cid = get_insect_names()
     records = get_annotations(cname2cid, datadir)
 
@@ -1019,8 +1019,8 @@ if __name__ == '__main__':
             regularization=fluid.regularizer.L2Decay(0.0005),
             parameter_list=model.parameters())  # 创建优化器
 
-        train_loader = multithread_loader(TRAINDIR, batch_size=4, mode='train')  # 创建训练数据读取器
-        valid_loader = multithread_loader(VALIDDIR, batch_size=4, mode='valid')  # 创建验证数据读取器
+        train_loader = multithread_loader(TRAINDIR, batch_size=1, mode='train')  # 创建训练数据读取器
+        valid_loader = multithread_loader(VALIDDIR, batch_size=1, mode='valid')  # 创建验证数据读取器
 
         MAX_EPOCH = 200
         for epoch in range(MAX_EPOCH):
