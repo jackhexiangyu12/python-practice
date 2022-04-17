@@ -387,7 +387,7 @@ def get_annotations(cname2cid, datadir):
     records = []
     ct = 0
     for fname in filenames:
-        fid = fid[:-4]
+        fid = fname[:-4]
         fpath = os.path.join(datadir, 'annotations', fname)
         img_file = os.path.join(datadir, 'JPEGImages', fid + '.jpg')
         tree = ET.parse(fpath)
@@ -1019,8 +1019,8 @@ if __name__ == '__main__':
             regularization=fluid.regularizer.L2Decay(0.0005),
             parameter_list=model.parameters())  # 创建优化器
 
-        train_loader = multithread_loader(TRAINDIR, batch_size=10, mode='train')  # 创建训练数据读取器
-        valid_loader = multithread_loader(VALIDDIR, batch_size=10, mode='valid')  # 创建验证数据读取器
+        train_loader = multithread_loader(TRAINDIR, batch_size=4, mode='train')  # 创建训练数据读取器
+        valid_loader = multithread_loader(VALIDDIR, batch_size=4, mode='valid')  # 创建验证数据读取器
 
         MAX_EPOCH = 200
         for epoch in range(MAX_EPOCH):
