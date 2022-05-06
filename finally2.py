@@ -22,7 +22,7 @@ limObj = 0.8
 iouLim=0.1
 
 ## 加载模型
-place = fluid.CUDAPlace(0)
+place = fluid.CPUPlace()
 mainProg = fluid.default_main_program()
 exe = fluid.Executor(place)
 

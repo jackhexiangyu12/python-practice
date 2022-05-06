@@ -23,7 +23,7 @@ import numpy as np
 eps=6
 
 def func(x):
-    return x*sin(x)
+    return (x*x*x+sin(x))/x
 
 
 class Romberg:
@@ -97,6 +97,6 @@ class Romberg:
 
 
 
-rom = Romberg(0, 2*pi)
+rom = Romberg(0.3, 0.8)
 print(rom.calc())
 
