@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>30XYTSHOBTSW.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\30XYTSHOBTSW.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>11</xmin>
+			<ymin>4</ymin>
+			<xmax>505</xmax>
+			<ymax>448</ymax>
+		</bndbox>
+	</object>
+</annotation>

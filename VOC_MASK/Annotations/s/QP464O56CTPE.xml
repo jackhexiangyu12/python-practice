@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>QP464O56CTPE.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\QP464O56CTPE.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s171</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>161</xmin>
+			<ymin>189</ymin>
+			<xmax>507</xmax>
+			<ymax>375</ymax>
+		</bndbox>
+	</object>
+</annotation>

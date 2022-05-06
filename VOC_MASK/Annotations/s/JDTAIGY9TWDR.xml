@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>JDTAIGY9TWDR.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\JDTAIGY9TWDR.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss13</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>47</xmin>
+			<ymin>88</ymin>
+			<xmax>494</xmax>
+			<ymax>468</ymax>
+		</bndbox>
+	</object>
+</annotation>

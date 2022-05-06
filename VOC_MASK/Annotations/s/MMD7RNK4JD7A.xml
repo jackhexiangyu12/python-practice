@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>MMD7RNK4JD7A.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\MMD7RNK4JD7A.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss59</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6</xmin>
+			<ymin>64</ymin>
+			<xmax>505</xmax>
+			<ymax>442</ymax>
+		</bndbox>
+	</object>
+</annotation>

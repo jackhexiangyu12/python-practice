@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>2HYKTX5Z3XMZ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\2HYKTX5Z3XMZ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s17</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>34</xmin>
+			<ymin>168</ymin>
+			<xmax>480</xmax>
+			<ymax>347</ymax>
+		</bndbox>
+	</object>
+</annotation>

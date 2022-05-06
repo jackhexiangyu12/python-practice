@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>NJUXDTA84XOJ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\NJUXDTA84XOJ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss16</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>71</xmin>
+			<ymin>33</ymin>
+			<xmax>422</xmax>
+			<ymax>488</ymax>
+		</bndbox>
+	</object>
+</annotation>

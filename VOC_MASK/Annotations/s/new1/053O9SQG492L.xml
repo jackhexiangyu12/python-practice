@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>053O9SQG492L.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\053O9SQG492L.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>53</ymin>
+			<xmax>446</xmax>
+			<ymax>471</ymax>
+		</bndbox>
+	</object>
+</annotation>

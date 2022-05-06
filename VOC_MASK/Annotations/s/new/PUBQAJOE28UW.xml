@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>PUBQAJOE28UW.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\PUBQAJOE28UW.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>28</xmin>
+			<ymin>4</ymin>
+			<xmax>474</xmax>
+			<ymax>481</ymax>
+		</bndbox>
+	</object>
+</annotation>

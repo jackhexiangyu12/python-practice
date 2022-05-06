@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>H0UB3R7RGWXQ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\H0UB3R7RGWXQ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s125</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>32</xmin>
+			<ymin>155</ymin>
+			<xmax>482</xmax>
+			<ymax>476</ymax>
+		</bndbox>
+	</object>
+</annotation>

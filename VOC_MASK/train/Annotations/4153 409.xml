@@ -1,0 +1,50 @@
+<annotation>
+	<folder>4153 (2022-4-15 23-22-36)</folder>
+	<filename>4153 409.jpg</filename>
+	<path>D:\图片库\图4154\4153 (2022-4-15 23-22-36)\4153 409.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2160</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1161</xmin>
+			<ymin>473</ymin>
+			<xmax>1222</xmax>
+			<ymax>617</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1139</xmin>
+			<ymin>593</ymin>
+			<xmax>1197</xmax>
+			<ymax>693</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>m</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1307</xmin>
+			<ymin>171</ymin>
+			<xmax>1441</xmax>
+			<ymax>308</ymax>
+		</bndbox>
+	</object>
+</annotation>

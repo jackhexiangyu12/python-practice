@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>QOJOLGLL5O7W.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\QOJOLGLL5O7W.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss17</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>24</xmin>
+			<ymin>18</ymin>
+			<xmax>444</xmax>
+			<ymax>509</ymax>
+		</bndbox>
+	</object>
+</annotation>

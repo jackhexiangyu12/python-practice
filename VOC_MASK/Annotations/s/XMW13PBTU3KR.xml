@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>XMW13PBTU3KR.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\XMW13PBTU3KR.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s205</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>110</ymin>
+			<xmax>494</xmax>
+			<ymax>403</ymax>
+		</bndbox>
+	</object>
+</annotation>

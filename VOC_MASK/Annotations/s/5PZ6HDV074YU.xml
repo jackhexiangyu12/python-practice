@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>5PZ6HDV074YU.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\5PZ6HDV074YU.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s21</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>111</ymin>
+			<xmax>499</xmax>
+			<ymax>361</ymax>
+		</bndbox>
+	</object>
+</annotation>

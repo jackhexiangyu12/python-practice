@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>Z3IDUPHNOTH4.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\Z3IDUPHNOTH4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s211</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>97</xmin>
+			<ymin>12</ymin>
+			<xmax>423</xmax>
+			<ymax>504</ymax>
+		</bndbox>
+	</object>
+</annotation>

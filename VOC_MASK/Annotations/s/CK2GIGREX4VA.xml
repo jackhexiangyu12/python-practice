@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>CK2GIGREX4VA.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\CK2GIGREX4VA.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s25</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>42</xmin>
+			<ymin>185</ymin>
+			<xmax>470</xmax>
+			<ymax>370</ymax>
+		</bndbox>
+	</object>
+</annotation>

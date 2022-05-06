@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>7DIB2ZFC2DU3.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\7DIB2ZFC2DU3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s84</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>29</xmin>
+			<ymin>78</ymin>
+			<xmax>490</xmax>
+			<ymax>443</ymax>
+		</bndbox>
+	</object>
+</annotation>

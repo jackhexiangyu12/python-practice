@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>VEQBT1ZO6YZF.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\VEQBT1ZO6YZF.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>45</xmin>
+			<ymin>85</ymin>
+			<xmax>468</xmax>
+			<ymax>435</ymax>
+		</bndbox>
+	</object>
+</annotation>

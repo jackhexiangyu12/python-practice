@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>NCB4K02NFPCQ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\NCB4K02NFPCQ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s32</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>173</xmin>
+			<ymin>99</ymin>
+			<xmax>338</xmax>
+			<ymax>459</ymax>
+		</bndbox>
+	</object>
+</annotation>

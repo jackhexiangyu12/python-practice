@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>YMS5RV1BS36R.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\YMS5RV1BS36R.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>114</ymin>
+			<xmax>468</xmax>
+			<ymax>433</ymax>
+		</bndbox>
+	</object>
+</annotation>

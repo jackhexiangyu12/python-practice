@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>8ZSNSO0WT99V.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\8ZSNSO0WT99V.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s22</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>100</xmin>
+			<ymin>85</ymin>
+			<xmax>370</xmax>
+			<ymax>444</ymax>
+		</bndbox>
+	</object>
+</annotation>

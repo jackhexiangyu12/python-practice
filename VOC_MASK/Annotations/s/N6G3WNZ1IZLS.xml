@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>N6G3WNZ1IZLS.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\N6G3WNZ1IZLS.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s150</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>66</xmin>
+			<ymin>4</ymin>
+			<xmax>441</xmax>
+			<ymax>510</ymax>
+		</bndbox>
+	</object>
+</annotation>

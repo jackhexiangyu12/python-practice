@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>VQXYR2JMY35U.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\VQXYR2JMY35U.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>12</ymin>
+			<xmax>504</xmax>
+			<ymax>502</ymax>
+		</bndbox>
+	</object>
+</annotation>

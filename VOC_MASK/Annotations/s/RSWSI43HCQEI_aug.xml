@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>RSWSI43HCQEI_aug.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\RSWSI43HCQEI_aug.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss19</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>47</xmin>
+			<ymin>165</ymin>
+			<xmax>493</xmax>
+			<ymax>398</ymax>
+		</bndbox>
+	</object>
+</annotation>

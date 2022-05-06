@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>4ZT4WF8ELWID.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\4ZT4WF8ELWID.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>10</xmin>
+			<ymin>4</ymin>
+			<xmax>504</xmax>
+			<ymax>509</ymax>
+		</bndbox>
+	</object>
+</annotation>

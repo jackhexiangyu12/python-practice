@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>243R8A7EZZG0.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\243R8A7EZZG0.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss3</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>109</xmin>
+			<ymin>3</ymin>
+			<xmax>461</xmax>
+			<ymax>483</ymax>
+		</bndbox>
+	</object>
+</annotation>

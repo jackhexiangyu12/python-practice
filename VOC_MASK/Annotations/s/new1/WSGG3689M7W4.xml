@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>WSGG3689M7W4.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office scissors\WSGG3689M7W4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>2</ymin>
+			<xmax>433</xmax>
+			<ymax>503</ymax>
+		</bndbox>
+	</object>
+</annotation>

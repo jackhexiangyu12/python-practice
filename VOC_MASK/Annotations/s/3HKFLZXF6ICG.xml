@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>3HKFLZXF6ICG.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\3HKFLZXF6ICG.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s18</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>145</xmin>
+			<ymin>1</ymin>
+			<xmax>365</xmax>
+			<ymax>512</ymax>
+		</bndbox>
+	</object>
+</annotation>

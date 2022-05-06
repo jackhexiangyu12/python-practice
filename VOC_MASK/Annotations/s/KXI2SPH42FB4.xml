@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>KXI2SPH42FB4.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office scissors\KXI2SPH42FB4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s12</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>79</xmin>
+			<ymin>73</ymin>
+			<xmax>298</xmax>
+			<ymax>455</ymax>
+		</bndbox>
+	</object>
+</annotation>

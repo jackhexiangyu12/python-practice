@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>0XF07C7K1FMO.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\0XF07C7K1FMO.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>254</xmin>
+			<ymin>3</ymin>
+			<xmax>449</xmax>
+			<ymax>512</ymax>
+		</bndbox>
+	</object>
+</annotation>

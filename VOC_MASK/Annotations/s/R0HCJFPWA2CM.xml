@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>R0HCJFPWA2CM.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\R0HCJFPWA2CM.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss68</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>93</xmin>
+			<ymin>21</ymin>
+			<xmax>396</xmax>
+			<ymax>491</ymax>
+		</bndbox>
+	</object>
+</annotation>

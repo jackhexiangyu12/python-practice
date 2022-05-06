@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>6HTXWYA30IDW.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\6HTXWYA30IDW.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>123</xmin>
+			<ymin>22</ymin>
+			<xmax>380</xmax>
+			<ymax>490</ymax>
+		</bndbox>
+	</object>
+</annotation>

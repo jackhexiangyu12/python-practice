@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>G2AJ9LWNOW3C.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\G2AJ9LWNOW3C.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s122</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>134</xmin>
+			<ymin>127</ymin>
+			<xmax>430</xmax>
+			<ymax>375</ymax>
+		</bndbox>
+	</object>
+</annotation>

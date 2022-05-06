@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>ULBUB2EPWCDJ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\ULBUB2EPWCDJ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s187</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>48</xmin>
+			<ymin>85</ymin>
+			<xmax>421</xmax>
+			<ymax>473</ymax>
+		</bndbox>
+	</object>
+</annotation>

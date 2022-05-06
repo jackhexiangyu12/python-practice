@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>N85P61HHAOQF.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\N85P61HHAOQF.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss60</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>38</xmin>
+			<ymin>148</ymin>
+			<xmax>474</xmax>
+			<ymax>340</ymax>
+		</bndbox>
+	</object>
+</annotation>

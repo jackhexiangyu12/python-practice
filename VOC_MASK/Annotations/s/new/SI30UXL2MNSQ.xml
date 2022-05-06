@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>SI30UXL2MNSQ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\SI30UXL2MNSQ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>68</ymin>
+			<xmax>373</xmax>
+			<ymax>496</ymax>
+		</bndbox>
+	</object>
+</annotation>

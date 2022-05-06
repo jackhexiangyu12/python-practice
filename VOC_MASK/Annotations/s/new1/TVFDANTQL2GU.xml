@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>TVFDANTQL2GU.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\TVFDANTQL2GU.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59</xmin>
+			<ymin>7</ymin>
+			<xmax>475</xmax>
+			<ymax>503</ymax>
+		</bndbox>
+	</object>
+</annotation>

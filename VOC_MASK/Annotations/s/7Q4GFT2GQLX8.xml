@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>7Q4GFT2GQLX8.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\7Q4GFT2GQLX8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss37</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>33</xmin>
+			<ymin>155</ymin>
+			<xmax>466</xmax>
+			<ymax>350</ymax>
+		</bndbox>
+	</object>
+</annotation>

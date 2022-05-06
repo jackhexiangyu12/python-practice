@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>434P4FJH31BK.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\434P4FJH31BK.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss137</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>30</xmin>
+			<ymin>31</ymin>
+			<xmax>432</xmax>
+			<ymax>493</ymax>
+		</bndbox>
+	</object>
+</annotation>

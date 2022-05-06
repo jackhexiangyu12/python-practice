@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>FL8MWFF7SJ7M.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\FL8MWFF7SJ7M.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s119</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>114</xmin>
+			<ymin>103</ymin>
+			<xmax>416</xmax>
+			<ymax>370</ymax>
+		</bndbox>
+	</object>
+</annotation>

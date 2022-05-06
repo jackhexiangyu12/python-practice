@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>0LCI233S4BYT.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\0LCI233S4BYT.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>178</xmin>
+			<ymin>61</ymin>
+			<xmax>327</xmax>
+			<ymax>443</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>5TM9384TX7PJ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\5TM9384TX7PJ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>9</xmin>
+			<ymin>81</ymin>
+			<xmax>508</xmax>
+			<ymax>432</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>93E0D2ZMQ6KB.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\93E0D2ZMQ6KB.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s90</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>72</xmin>
+			<ymin>17</ymin>
+			<xmax>500</xmax>
+			<ymax>498</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>KET2ZA5GNIXD.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\KET2ZA5GNIXD.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s139</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>14</xmin>
+			<ymin>59</ymin>
+			<xmax>493</xmax>
+			<ymax>459</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -232,13 +232,20 @@ def testModel():
 
 
 # TODO ...
-fluid.io.load_persistables(exe,'./model2', mainProg) # 直接注释掉?
+model_path='./model2'
+if(os.path.exists(model_path)):
+    fluid.io.load_persistables(exe,model_path, mainProg) # 直接注释掉?
 print("开始训练")
 dataNum = len(xmlList)
 print(dataNum)
 # TODO 看看总长度是多少???
 # 总次数 = 5 * dataNum/BATCH_SIZE * 1 = ?
-for i in range(15):  # 训练5次?    0226:改为2次
+
+acc=[]
+loss=[]
+epochs =[]
+cnt=0
+for i in range(1):  # 训练5次?    0226:改为2次
     print("This is {} times in big FOR".format(i))
     testModel()  # 之前定义的函数
     random.shuffle(xmlList)  # 将序列中的元素随机打乱 -》 打乱xmlList
@@ -262,23 +269,33 @@ for i in range(15):  # 训练5次?    0226:改为2次
         # print(la)
         if begin % 128 == 0:  # change here?
             print(i, begin, la, time.time() - tic)  # 打印训练的各种信息，时间等等
+            loss=loss+[la[0][0]]
+            epochs=epochs+[cnt]
+            cnt=cnt+1
             # 写一个详细的 tips !!!
         begin += BATCH_SIZE  # 280s 一次
         end += BATCH_SIZE
 
 fluid.io.save_persistables(exe, './model2', fluid.default_main_program())
-# 训练了2h+,还是不知道结果怎么样????
-# 显示中间过程!! 
-# 暂时保存模型
-fluid.io.save_persistables(exe, './model2', fluid.default_main_program())
-# 第二次 20-30s一个batch !!!
+    # 训练了2h+,还是不知道结果怎么样????
+    # 显示中间过程!!
+    # 暂时保存模型
+    # fluid.io.save_persistables(exe, './model2', fluid.default_main_program())
+    # 第二次 20-30s一个batch !!!
 
-# b, l, i = dataReader2(xmlList[0:1])
-# print(b.shape, l.shape, i.shape)
+    # b, l, i = dataReader2(xmlList[0:1])
+    # print(b.shape, l.shape, i.shape)
 
-# 保存预测模型
+    # 保存预测模型
 fluid.io.save_inference_model("./refMaskModel2/",
-                              feeded_var_names=['image'],
-                              target_vars=[P0,P1,P2],
-                              executor=exe)
+                                  feeded_var_names=['image'],
+                                  target_vars=[P0, P1, P2],
+                                  executor=exe)
 
+import matplotlib.pyplot as plt
+
+plt.plot(epochs,loss,color='r',label='acc')        # r表示红色
+# plt.plot(epochs,loss,color=(0,0,0),label='loss')  #也可以用RGB值表示颜色
+
+plt.show()
+print('finishing training')

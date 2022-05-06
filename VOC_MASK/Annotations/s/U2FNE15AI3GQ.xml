@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>U2FNE15AI3GQ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\U2FNE15AI3GQ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s181</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>79</xmin>
+			<ymin>165</ymin>
+			<xmax>406</xmax>
+			<ymax>421</ymax>
+		</bndbox>
+	</object>
+</annotation>

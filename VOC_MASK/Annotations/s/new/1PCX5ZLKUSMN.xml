@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>1PCX5ZLKUSMN.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\1PCX5ZLKUSMN.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>130</xmin>
+			<ymin>22</ymin>
+			<xmax>357</xmax>
+			<ymax>451</ymax>
+		</bndbox>
+	</object>
+</annotation>

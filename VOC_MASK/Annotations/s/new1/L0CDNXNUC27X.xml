@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>L0CDNXNUC27X.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office scissors\L0CDNXNUC27X.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>19</xmin>
+			<ymin>9</ymin>
+			<xmax>502</xmax>
+			<ymax>505</ymax>
+		</bndbox>
+	</object>
+</annotation>

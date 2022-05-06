@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>Q5FXU273GP2X.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\Q5FXU273GP2X.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>150</ymin>
+			<xmax>467</xmax>
+			<ymax>479</ymax>
+		</bndbox>
+	</object>
+</annotation>

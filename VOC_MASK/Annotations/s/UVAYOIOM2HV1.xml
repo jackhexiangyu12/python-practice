@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>UVAYOIOM2HV1.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\UVAYOIOM2HV1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss82</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>159</xmin>
+			<ymin>70</ymin>
+			<xmax>372</xmax>
+			<ymax>489</ymax>
+		</bndbox>
+	</object>
+</annotation>

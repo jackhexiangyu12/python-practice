@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>D7O5S9YN0G90.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\D7O5S9YN0G90.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s105</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>9</xmin>
+			<ymin>132</ymin>
+			<xmax>511</xmax>
+			<ymax>379</ymax>
+		</bndbox>
+	</object>
+</annotation>

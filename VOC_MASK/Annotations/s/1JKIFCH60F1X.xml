@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>1JKIFCH60F1X.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\1JKIFCH60F1X.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss112</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6</xmin>
+			<ymin>6</ymin>
+			<xmax>512</xmax>
+			<ymax>506</ymax>
+		</bndbox>
+	</object>
+</annotation>

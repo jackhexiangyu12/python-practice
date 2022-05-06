@@ -1,0 +1,50 @@
+<annotation>
+	<folder>415.2 (2022-4-15 21-28-18)</folder>
+	<filename>415.2 146.jpg</filename>
+	<path>D:\图片库\图4152\415.2 (2022-4-15 21-28-18)\415.2 146.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>m</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>293</xmin>
+			<ymin>155</ymin>
+			<xmax>405</xmax>
+			<ymax>288</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>176</xmin>
+			<ymin>350</ymin>
+			<xmax>312</xmax>
+			<ymax>506</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>310</xmin>
+			<ymin>329</ymin>
+			<xmax>430</xmax>
+			<ymax>508</ymax>
+		</bndbox>
+	</object>
+</annotation>

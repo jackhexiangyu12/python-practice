@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>M0NW47NZPOJP.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\M0NW47NZPOJP.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>17</xmin>
+			<ymin>190</ymin>
+			<xmax>481</xmax>
+			<ymax>382</ymax>
+		</bndbox>
+	</object>
+</annotation>

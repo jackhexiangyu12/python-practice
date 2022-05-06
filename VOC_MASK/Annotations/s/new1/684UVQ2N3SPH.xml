@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>684UVQ2N3SPH.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\684UVQ2N3SPH.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>24</xmin>
+			<ymin>1</ymin>
+			<xmax>497</xmax>
+			<ymax>476</ymax>
+		</bndbox>
+	</object>
+</annotation>

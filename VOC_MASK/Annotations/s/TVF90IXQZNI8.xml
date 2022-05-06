@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>TVF90IXQZNI8.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\TVF90IXQZNI8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss75</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>47</xmin>
+			<ymin>194</ymin>
+			<xmax>474</xmax>
+			<ymax>349</ymax>
+		</bndbox>
+	</object>
+</annotation>

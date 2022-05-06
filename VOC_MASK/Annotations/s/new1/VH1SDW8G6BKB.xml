@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>VH1SDW8G6BKB.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\VH1SDW8G6BKB.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>30</xmin>
+			<ymin>41</ymin>
+			<xmax>489</xmax>
+			<ymax>488</ymax>
+		</bndbox>
+	</object>
+</annotation>

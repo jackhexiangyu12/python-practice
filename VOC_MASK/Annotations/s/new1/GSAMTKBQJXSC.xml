@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>GSAMTKBQJXSC.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\GSAMTKBQJXSC.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8</xmin>
+			<ymin>8</ymin>
+			<xmax>500</xmax>
+			<ymax>501</ymax>
+		</bndbox>
+	</object>
+</annotation>

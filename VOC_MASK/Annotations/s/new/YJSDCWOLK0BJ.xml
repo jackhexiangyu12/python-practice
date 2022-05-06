@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>YJSDCWOLK0BJ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\YJSDCWOLK0BJ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8</xmin>
+			<ymin>148</ymin>
+			<xmax>509</xmax>
+			<ymax>380</ymax>
+		</bndbox>
+	</object>
+</annotation>

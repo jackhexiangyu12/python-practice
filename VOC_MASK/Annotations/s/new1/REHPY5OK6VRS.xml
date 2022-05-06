@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>REHPY5OK6VRS.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\REHPY5OK6VRS.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>56</xmin>
+			<ymin>91</ymin>
+			<xmax>459</xmax>
+			<ymax>460</ymax>
+		</bndbox>
+	</object>
+</annotation>

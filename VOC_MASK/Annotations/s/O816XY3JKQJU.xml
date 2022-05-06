@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>O816XY3JKQJU.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\O816XY3JKQJU.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s153</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>7</xmin>
+			<ymin>184</ymin>
+			<xmax>503</xmax>
+			<ymax>346</ymax>
+		</bndbox>
+	</object>
+</annotation>

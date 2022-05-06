@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office scissors</folder>
+	<filename>WQ18F83FV66M.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office scissors\WQ18F83FV66M.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss23</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>83</xmin>
+			<ymin>39</ymin>
+			<xmax>352</xmax>
+			<ymax>473</ymax>
+		</bndbox>
+	</object>
+</annotation>

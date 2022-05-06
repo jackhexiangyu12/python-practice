@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>SFR7IMXRWD4G.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\office_equipment scissors\SFR7IMXRWD4G.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s39</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>67</xmin>
+			<ymin>64</ymin>
+			<xmax>459</xmax>
+			<ymax>487</ymax>
+		</bndbox>
+	</object>
+</annotation>

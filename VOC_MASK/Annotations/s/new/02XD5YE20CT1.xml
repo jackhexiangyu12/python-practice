@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>02XD5YE20CT1.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\scissors\02XD5YE20CT1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>19</xmin>
+			<ymin>7</ymin>
+			<xmax>483</xmax>
+			<ymax>502</ymax>
+		</bndbox>
+	</object>
+</annotation>

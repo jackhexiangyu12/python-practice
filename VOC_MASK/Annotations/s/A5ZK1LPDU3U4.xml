@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>A5ZK1LPDU3U4.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\A5ZK1LPDU3U4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ss41</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>34</xmin>
+			<ymin>175</ymin>
+			<xmax>472</xmax>
+			<ymax>404</ymax>
+		</bndbox>
+	</object>
+</annotation>

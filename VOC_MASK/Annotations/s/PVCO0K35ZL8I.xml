@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>PVCO0K35ZL8I.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\PVCO0K35ZL8I.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s161</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>27</xmin>
+			<ymin>3</ymin>
+			<xmax>495</xmax>
+			<ymax>512</ymax>
+		</bndbox>
+	</object>
+</annotation>

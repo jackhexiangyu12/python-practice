@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>L9FNIF4OHAVZ.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\L9FNIF4OHAVZ.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s143</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>21</xmin>
+			<ymin>42</ymin>
+			<xmax>499</xmax>
+			<ymax>494</ymax>
+		</bndbox>
+	</object>
+</annotation>

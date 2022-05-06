@@ -1,0 +1,26 @@
+<annotation>
+	<folder>scissors</folder>
+	<filename>UE634XG9TZR4.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\test\scissors\UE634XG9TZR4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s186</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>54</xmin>
+			<ymin>59</ymin>
+			<xmax>449</xmax>
+			<ymax>376</ymax>
+		</bndbox>
+	</object>
+</annotation>

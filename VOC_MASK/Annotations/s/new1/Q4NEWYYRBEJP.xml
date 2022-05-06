@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>Q4NEWYYRBEJP.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\Q4NEWYYRBEJP.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>52</xmin>
+			<ymin>129</ymin>
+			<xmax>467</xmax>
+			<ymax>410</ymax>
+		</bndbox>
+	</object>
+</annotation>

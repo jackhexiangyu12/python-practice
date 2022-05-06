@@ -1,0 +1,26 @@
+<annotation>
+	<folder>office_equipment scissors</folder>
+	<filename>LU8U8WM903GR.jpg</filename>
+	<path>D:\新建文件夹 (2)\data\train\office_equipment scissors\LU8U8WM903GR.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>112</xmin>
+			<ymin>44</ymin>
+			<xmax>397</xmax>
+			<ymax>452</ymax>
+		</bndbox>
+	</object>
+</annotation>
